@@ -1,0 +1,2 @@
+# tarkvara
+tarkvaratehnika aine projekt
