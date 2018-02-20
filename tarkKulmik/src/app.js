@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {Todo} from './todo';
 
     export class App {
@@ -21,3 +22,10 @@ import {Todo} from './todo';
         }
       }
     }
+=======
+export class App {
+  constructor() {
+    this.message = 'Mul on niii igavv!';
+  }
+}
+>>>>>>> 8ff252f819e36a464a6d151b078afb7167d51087
