@@ -2,17 +2,33 @@
 <html>
 <head> 
 <title>Toiduained</title>
+ <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
 
 <h1>Sinu toiduained:</h1>
 <form>
-  <h2>Lisa toit:</h2><br>
-  <input type="text" name="toiduaine"><br>
-  <h2>Kogus:</h2><br>
-  <input type="integer" name="toidukogus">
+  <p>Lisa toit:</p><br>
+  <input type="text" name="toiduaine">
+  <p>Kogus:</p><br>
+  <input type="number" name="toidukogus"> <br>
+  <p>Toiduaine kategooria: </p><br>
+  <select class="toiuained" name="toiduaine">
+    <option value="piim">Piimatooted</option>
+    <option value="liha">Lihatooted</option>
+    <option value="köögiviljad">Köögiviljad</option>
+    <option value="puuviljad">Puuviljad</option>
+    <option value="maiustused">Maiustused</option>
+    <option value="snakk">Snäkk</option>
+    <option value="kuivaine">Kuivained</option>
+    <option value="valmistoidud">Valmistatud toit</option>
+    <option value="muu">Muu</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
 </form>
+<h1> Praegused toidud: </h1>
 
 </body>
 </html>
