@@ -17,6 +17,9 @@
   <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:21%;min-width:300px" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Sulge menüü</a>
     <a href="#top" onclick="w3_close()" class="w3-bar-item w3-button">Ülevaade</a>
+      <ul>
+      <li repeat.for="food of foodList">${food.foodName} ${food.foodNum} ${food.foodType} ${food.foodDate}</li>
+    </ul>
     <a href="#addfood" onclick="w3_close()" class="w3-bar-item w3-button">Lisa toit</a>
   </nav>
 
@@ -95,7 +98,7 @@
           <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="foodData.foodName">            
           </div>
           <div>
-            <label for="numOfFood">Kogus:<br></label><input id="numOfFood" type="number" name="numOfFood" value.bind="foodData.numOfFood">
+            <label for="foodNum">Kogus:<br></label><input id="foodNum" type="number" name="foodNum" value.bind="foodData.foodNum">
           </div>
           
           <div>
@@ -113,9 +116,9 @@
              </select><option id="foodType" type="text" name="foodType" value.bind="foodData.foodType">
           </div>
           <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="foodData.foodDate"></div>
-          
+           <input type="submit" value="Lisa Toit" name="Lisa Toit">
         </form>
-        <input type="submit" value="Lisa Toit" name="Lisa Toit">
+
       </div>
     </div>
 <<<<<<< Updated upstream
