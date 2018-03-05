@@ -90,38 +90,32 @@
     <!-- addfood Section -->
     <div class="w3-container w3-center" style="margin-top:30px">
       <div class="w3-padding-32">
-        <form>
-          <h2>Lisa toit:</h2><br>
-          <div>
-            <p>Nimetus:</p>
-            <input type="text" name="toiduaine">
+        <form id="foodform" submit.delegate="addFood()">
+          <div>Lisa toit:</div><br>
+          <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="foodData.foodName">            
           </div>
           <div>
-            <p>Kogus:</p>
+            <label for="numOfFood">Kogus:<br></label><input id="numOfFood" type="number" name="numOfFood" value.bind="foodData.numOfFood">
           </div>
-          <div>
-            <input type="number" name="toidukogus">
-          </div>
+          
           <div>
             <p>Toiduaine kategooria: </p>
-            <select class="toiuained" name="toiduaine">
-    <option value="piim">Piimatooted</option>
-    <option value="liha">Lihatooted</option>
-    <option value="köögiviljad">Köögiviljad</option>
-    <option value="puuviljad">Puuviljad</option>
-    <option value="maiustused">Maiustused</option>
-    <option value="snakk">Snäkk</option>
-    <option value="kuivaine">Kuivained</option>
-    <option value="valmistoidud">Valmistatud toit</option>
-    <option value="muu">Muu</option>
-  </select>
+            <select for="foodType">
+               <option value="piim">Piimatooted</option>
+               <option value="liha">Lihatooted</option>
+               <option value="köögiviljad">Köögiviljad</option>
+               <option value="puuviljad">Puuviljad</option>
+               <option value="maiustused">Maiustused</option>
+               <option value="snakk">Snäkk</option>
+               <option value="kuivaine">Kuivained</option>
+              <option value="valmistoidud">Valmistatud toit</option>
+              <option value="muu">Muu</option>
+             </select><option id="foodType" type="text" name="foodType" value.bind="foodData.foodType">
           </div>
-          <p>Aegumise kuupäev:
-            <p>
-              <input type="date" name="date">
-              <p>
-                <input type="submit" value="Submit">
+          <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="foodData.foodDate"></div>
+          
         </form>
+        <input type="submit" value="Lisa Toit" name="Lisa Toit">
       </div>
     </div>
 <<<<<<< Updated upstream
