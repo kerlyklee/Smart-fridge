@@ -1,6 +1,6 @@
 <template>
 
-    
+
   <div class="w3-container w3-center" style="margin-top:30px">
     <div class="w3-padding-32">
       <form id="foodform" submit.delegate="addUser()">
@@ -28,19 +28,16 @@
         <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="userData.foodDate"></div>
          <input type="submit" value="Lisa Toit" name="Lisa Toit">
       </form>
-      <p>
-          <h3>Toidud</h3>
-          <ul>
-            <li repeat.for="food of foodtable">${user.foodName}
-            </li>
-          </ul>
-      </p>
+    
     </div>
   </div>
 
   <div class="w3-container w3-center" style="margin-top:35px">
       <div class="foodtable">
           <h2>Detailid:</h2><br><br>
+          <ul>
+      <li repeat.for="user of userList">${user.foodName} ${user.foodNum} ${user.foodtype} ${user.foodDate}</li>
+    </ul>
         <table>
           <thead>
             <tr>
