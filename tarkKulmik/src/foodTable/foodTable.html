@@ -1,11 +1,11 @@
 <template>
 
-
+    
   <div class="w3-container w3-center" style="margin-top:30px">
     <div class="w3-padding-32">
       <form id="foodform" submit.delegate="addUser()">
         <div>Lisa toit:</div><br>
-        <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value="TAnelonloll">
+        <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="userData.foodName">
         </div>
         <div>
           <label for="foodNum">Kogus:<br></label><input id="foodNum" type="number" name="foodNum" value.bind="userData.foodNum">

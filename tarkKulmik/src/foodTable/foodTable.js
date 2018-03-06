@@ -5,27 +5,27 @@ export class foodTable {
 	userList = []
 
   constructor() {
-  	
-   
+
+  	  
   }
   activate() {
 		let client = new HttpClient();
-
 		client.fetch('http://localhost:8080/users')
 			.then(response => response.json())
 			.then(users => this.userList = users);
 	}
-
-	addUser() {
+		addUser() {
 		let client = new HttpClient();
+	
 
-		client.fetch('http://localhost:8080/users/add', {
+		console.log("Sellega  saadan ", json(this.userData))
+		client.fetch('http://localhost:8080/', {
 			'method': "POST",
 			'body': json(this.userData)
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Server saatis " + data.foodName);
+				console.log("Server saatis " + JSON.stringify(data));
 		});
 
 		console.log("Method executed!")
