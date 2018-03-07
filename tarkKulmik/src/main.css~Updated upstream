@@ -1,0 +1,10 @@
+<<<<<<< Updated upstream
+body {
+	backround: red;
+=======
+div {color: blue;}
+h1 {
+color:black;
+margin-left: 20px;
+>>>>>>> Stashed changes
+}
