@@ -1,8 +1,9 @@
 <template>
 
-
-  <div class="w3-container w3-center" style="margin-top:30px">
-    <div class="w3-padding-32">
+    
+ <require from="foodList/foodList"></require>
+  <div style="margin-top:30px">
+    <div>
       <form id="foodform" submit.delegate="addUser()">
         <div>Lisa toit:</div><br>
         <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="userData.foodName">
@@ -28,46 +29,17 @@
         <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="userData.foodDate"></div>
          <input type="submit" value="Lisa Toit" name="Lisa Toit">
       </form>
-    
+
     </div>
   </div>
 
   <div class="w3-container w3-center" style="margin-top:35px">
       <div class="foodtable">
-          <h2>Detailid:</h2><br><br>
-          <ul>
-      <li repeat.for="user of userList">${user.foodName} ${user.foodNum} ${user.foodtype} ${user.foodDate}</li>
-    </ul>
-        <table>
-          <thead>
-            <tr>
-              <th>Nimetus</th>
-              <th>Kategooria</th>
-              <th>Kogus</th>
-              <th>Aegumise kuupäev</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-            </tr>
-            <tr>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-            </tr>
-            <tr>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-              <td>Table Data</td>
-            </tr>
-          </tbody>
-        </table>
+          <h2>Toidud:</h2><br><br>
+
+          <food-list></food-list>
+
+
       </div>
     </div>
     </div>

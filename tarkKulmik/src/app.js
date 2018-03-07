@@ -13,6 +13,12 @@ export class App {
         moduleId: 'foodTable/foodTable',
         nav: true
       },
+      {
+        route: 'foodList',
+        name: 'foodList',
+        moduleId: 'foodList/foodList',
+        nav: true
+      },
     ]);
   }
 }

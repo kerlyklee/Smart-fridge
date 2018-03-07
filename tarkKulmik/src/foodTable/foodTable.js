@@ -5,9 +5,8 @@ export class foodTable {
 	userList = []
 
   constructor() {
-
-  	  
   }
+	
   activate() {
 		let client = new HttpClient();
 		client.fetch('http://localhost:8080/users')
@@ -16,7 +15,7 @@ export class foodTable {
 	}
 		addUser() {
 		let client = new HttpClient();
-	
+
 
 		console.log("Sellega  saadan ", json(this.userData))
 		client.fetch('http://localhost:8080/', {

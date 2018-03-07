@@ -1,0 +1,23 @@
+<template>
+      <div class="foodList">
+        <table>
+          <thead>
+            <tr>
+              <th>Nimetus</th>
+              <th>Kategooria</th>
+              <th>Kogus</th>
+              <th>Aegumise kuupäev</th>
+            </tr>
+            </thead>
+          <table repeat.for="food of foods" class="list-group-item ${food.id === $parent.selectedId ? 'active' : ''}">
+            <a route-href="route: foods; params.bind: {id:food.id}" click.delegate="$parent.select(food)">
+              <tr>
+                 <td>${food.name}</td>
+                 <td>${food.category}</td>
+                 <td>${food.amount}</td>
+                 <td>${food.expDate}</td>
+               </tr>
+            </a>
+          </table>
+      </div>
+    </template>
