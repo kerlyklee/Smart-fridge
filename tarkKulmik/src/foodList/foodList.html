@@ -1,0 +1,22 @@
+<template>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nimetus</th>
+              <th>Kategooria</th>
+              <th>Kogus</th>
+              <th>Aegumise kuupäev</th>
+            </tr>
+            </thead>
+            <tbody>
+          <tr repeat.for="food of foods">
+                 <td>${food.name}</td>
+                 <td>${food.category}</td>
+                 <td>${food.amount}</td>
+                 <td>${food.expDate}</td>
+               </tr>
+             </tbody>
+          </table>
+      </div>
+    </template>
