@@ -1,5 +1,5 @@
 <template>
-      <div class="foodList">
+      <div>
         <table>
           <thead>
             <tr>
@@ -9,15 +9,14 @@
               <th>Aegumise kuupäev</th>
             </tr>
             </thead>
-          <table repeat.for="food of foods" class="list-group-item ${food.id === $parent.selectedId ? 'active' : ''}">
-            <a route-href="route: foods; params.bind: {id:food.id}" click.delegate="$parent.select(food)">
-              <tr>
+            <tbody>
+          <tr repeat.for="food of foods">
                  <td>${food.name}</td>
                  <td>${food.category}</td>
                  <td>${food.amount}</td>
                  <td>${food.expDate}</td>
                </tr>
-            </a>
+             </tbody>
           </table>
       </div>
     </template>

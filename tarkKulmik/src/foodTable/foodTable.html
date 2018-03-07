@@ -1,46 +1,135 @@
 <template>
-
-    
- <require from="foodList/foodList"></require>
-  <div style="margin-top:30px">
-    <div>
-      <form id="foodform" submit.delegate="addUser()">
-        <div>Lisa toit:</div><br>
-        <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="userData.foodName">
-        </div>
-        <div>
-          <label for="foodNum">Kogus:<br></label><input id="foodNum" type="number" name="foodNum" value.bind="userData.foodNum">
-        </div>
-
-        <div>
-          <p>Toiduaine kategooria: </p>
-          <select for="foodType">
-             <option value="piim">Piimatooted</option>
-             <option value="liha">Lihatooted</option>
-             <option value="köögiviljad">Köögiviljad</option>
-             <option value="puuviljad">Puuviljad</option>
-             <option value="maiustused">Maiustused</option>
-             <option value="snakk">Snäkk</option>
-             <option value="kuivaine">Kuivained</option>
-            <option value="valmistoidud">Valmistatud toit</option>
-            <option value="muu">Muu</option>
-           </select><option id="foodType" type="text" name="foodType" value.bind="userData.foodType">
-        </div>
-        <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="userData.foodDate"></div>
-         <input type="submit" value="Lisa Toit" name="Lisa Toit">
-      </form>
-
-    </div>
-  </div>
-
-  <div class="w3-container w3-center" style="margin-top:35px">
-      <div class="foodtable">
-          <h2>Toidud:</h2><br><br>
-
-          <food-list></food-list>
+  <require from="foodList/foodList"></require>
 
 
-      </div>
-    </div>
-    </div>
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <title>Külmik</title>
+     <link href="stylesheet.css" rel="stylesheet">
+   </head>
+
+   <body>
+     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Külmik</a>
+     </nav>
+
+     <div class="container-fluid">
+       <div class="row">
+         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+           <div class="sidebar-sticky">
+             <ul class="nav flex-column">
+               <li class="nav-item">
+                 <a class="nav-link active" href="#">
+                   <span data-feather="home"></span>
+                   Toidu Lisamine <span class="sr-only">(current)</span>
+                 </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">
+                   <span data-feather="file"></span>
+                   Ülevaade
+                 </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">
+                   <span data-feather="bar-chart-2"></span>
+                   Reports
+                 </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">
+                   <span data-feather="layers"></span>
+                   Integrations
+                 </a>
+               </li>
+             </ul>
+
+             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+               <span>Saved reports</span>
+               <a class="d-flex align-items-center text-muted" href="#">
+                 <span data-feather="plus-circle"></span>
+               </a>
+             </h6>
+             <ul class="nav flex-column mb-2">
+               <li class="nav-item">
+                 <a class="nav-link" href="#">
+                   <span data-feather="file-text"></span>
+                   Current month
+                 </a>
+               </li>
+             </ul>
+           </div>
+         </nav>
+         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+
+ 		<div class="w3-container w3-center" style="margin-top:30px">
+       <div class="w3-padding-32">
+         <form id="foodform" submit.delegate="addFood()">
+           <div>Lisa toit:</div><br>
+           <div><label for="foodName">Toidu nimetus:<br></label><input id="foodName" type="text" name="foodName" value.bind="foodData.foodName">
+           </div>
+           <div>
+             <label for="foodNum">Kogus:<br></label><input id="foodNum" type="number" name="foodNum" value.bind="foodData.foodNum">
+           </div>
+
+           <div>
+             <p>Toiduaine kategooria: </p>
+             <select for="foodType">
+                <option value="piim">Piimatooted</option>
+                <option value="liha">Lihatooted</option>
+                <option value="köögiviljad">Köögiviljad</option>
+                <option value="puuviljad">Puuviljad</option>
+                <option value="maiustused">Maiustused</option>
+                <option value="snakk">Snäkk</option>
+                <option value="kuivaine">Kuivained</option>
+               <option value="valmistoidud">Valmistatud toit</option>
+               <option value="muu">Muu</option>
+              </select>
+           </div>
+           <div><label for="foodDate">Aegumis kuupäev:<br></label><input id="foodDate" type="date" name="foodDate" value.bind="foodData.foodDate"></div>
+            <input type="submit" name="Lisa Toit">
+         </form>
+
+       </div>
+     </div>
+
+
+           <h2>Section title</h2>
+           <div class="table-responsive">
+             <table class="table table-striped table-sm">
+               <thead>
+                 <tr>
+                   <th>#</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                 </tr>
+               </thead>
+               <tbody>
+
+                 <tr>
+                   <td>1,001</td>
+                   <td>Lorem</td>
+                   <td>ipsum</td>
+                   <td>dolor</td>
+                   <td>sit</td>
+                 </tr>
+                 <food-list></food-list>
+ 				<tr>
+                   <td>1,001</td>
+                   <td>Lorem</td>
+                   <td>ipsum</td>
+                   <td>dolor</td>
+                   <td>sit</td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+         </main>
+       </div>
+     </div>
  </template>
