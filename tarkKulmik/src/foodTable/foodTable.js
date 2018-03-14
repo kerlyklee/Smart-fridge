@@ -1,32 +1,25 @@
 import {HttpClient, json} from 'aurelia-fetch-client'
 
 export class foodTable {
-	userData = {}
-	userList = []
+	foodData = {}
 
-  constructor() {
-  }
-
-  activate() {
-		let client = new HttpClient();
-		client.fetch('http://localhost:8080/users')
-			.then(response => response.json())
-			.then(users => this.userList = users);
-	}
-		addUser() {
+  	constructor() {
+ 	}
+  	addUser() {
 		let client = new HttpClient();
 
 
-		console.log("Sellega  saadan ", json(this.userData))
-		client.fetch('http://localhost:8080/', {
+
+		client.fetch('http://localhost:8080/foods/add', {
 			'method': "POST",
-			'body': json(this.userData)
+			'body': json(this.foodData)
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log("Server saatis " + JSON.stringify(data));
+				console.log("Server saatis " + data.foodName);
 		});
 
 		console.log("Method executed!")
 	}
+
 }
