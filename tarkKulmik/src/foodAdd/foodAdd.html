@@ -1,0 +1,43 @@
+<template>
+	<div class="w3-container w3-center" style="margin-top:30px">
+       <div class="w3-padding-32">
+         <h3>Lisa toit:<br></h3>
+         <form id="foodform" submit.delegate="addFood()">
+           <div>
+             <label for="foodName">Toidu nimetus:</label>
+             <br>
+             <input type="text" value.bind="foodData.foodName">
+           </div>
+           <br>
+           <div>
+             <label for="foodNum">Kogus:</label>
+             <br>
+             <input type="text" value.bind="foodData.foodNum">
+           </div>
+           <br>
+           <div>
+             <p>Toiduaine kategooria: </p>
+             <select for="foodType">
+                <option value="piim">Piimatooted</option>
+                <option value="liha">Lihatooted</option>
+                <option value="köögiviljad">Köögiviljad</option>
+                <option value="puuviljad">Puuviljad</option>
+                <option value="maiustused">Maiustused</option>
+                <option value="snakk">Snäkk</option>
+                <option value="kuivaine">Kuivained</option>
+               <option value="valmistoidud">Valmistoidud</option>
+               <option value="muu">Muu</option>
+              </select>
+           </div>
+           <br>
+           <div>
+             <label for="foodDate">Aegumis kuupäev:</label>
+             <br>
+             <input type="date" value.bind="foodData.foodDate">
+           </div>
+           <br>
+            <input type="submit" value="Lisa Toit">
+         </form>
+       </div>
+     </div>
+ </template>

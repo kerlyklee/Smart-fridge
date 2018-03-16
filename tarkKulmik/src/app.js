@@ -2,22 +2,29 @@
 export class App {
   configureRouter(config, router) {
     this.router = router;
-    config.title = 'Aurelia';
+    config.title = 'Külmik';
     config.map([{
         route: ['', 'home'],
         name: 'home',
         moduleId: 'home/index'
+        
       },
       {
-        route: 'foodTable',
-        name: 'foodTable',
-        moduleId: 'foodTable/foodTable',
+        route: 'foodAlerts',
+        name: 'foodAlerts',
+        moduleId: 'foodAlerts/foodAlerts',
         nav: true
       },
       {
-        route: 'foodList',
-        name: 'foodList',
-        moduleId: 'foodList/foodList',
+        route: 'foodOverview',
+        name: 'foodOverview',
+        moduleId: 'foodOverview/foodOverview',
+        nav: true
+      },
+      {
+        route: 'foodAdd',
+        name: 'foodAdd',
+        moduleId: 'foodAdd/foodAdd',
         nav: true
       },
     ]);
