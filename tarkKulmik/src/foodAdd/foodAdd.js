@@ -6,7 +6,7 @@ export class foodAdd {
 		let client = new HttpClient();
  		let foodData = {}
 
-		client.fetch('http://localhost:8080/foods/add', {
+		client.fetch('http://localhost:8080/food/add', {
       'method': 'POST',
       'body': json(this.foodData)
     })
