@@ -2,14 +2,14 @@ package userFoods;
 
 import org.springframework.stereotype.Service;
 @Service
-public class FoodServise {
+public class FoodService {
 	
 	private FoodRepository foodRepository;
 	
 	public FoodService(FoodRepository foodRepository) {
 		this.foodRepository = foodRepository;
 	}
-	public Food addUser(Food food) {
+	public Food addFood(Food food) {
 		return foodRepository.save(food);
 	}
 }

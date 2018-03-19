@@ -10,6 +10,6 @@ public class Food {
 	long id;
 	String foodName;
 	int foodNum;
-	Date foodDate; 
+	String foodDate; 
 	String foodType;
 }

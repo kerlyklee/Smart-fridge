@@ -1,14 +1,13 @@
 package userFoods;
 import org.springframework.web.bind.annotaion.RequestBody;
+@RestController
 public class FoodController {
+	@Autowired
 	private FoodService foodService;
 	
-	public FoodController(FoodService foodService) {
-		this.foodService = foodService;
-	}
 	@RequestMapping(value="/foods/add", method=RequestMethod.POST,
 			consumes = "application/json")
-	public Food addUser(@RequestBody Food food) {
-		return foodService.addUser(food);
+	public Food addFood(@RequestBody Food food) {
+		return foodService.addFood(food);
 	}
 }
