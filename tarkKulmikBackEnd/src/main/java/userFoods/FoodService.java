@@ -1,6 +1,7 @@
 package userFoods;
-
+import java.util.List;
 import org.springframework.stereotype.Service;
+
 @Service
 public class FoodService {
 	
@@ -9,7 +10,12 @@ public class FoodService {
 	public FoodService(FoodRepository foodRepository) {
 		this.foodRepository = foodRepository;
 	}
-	public Food addFood(Food food) {
+	Food addFood(Food food){
 		return foodRepository.save(food);
+	}
+	
+
+	List<Food> getAllFoods(){
+		return foodRepository.findAll();
 	}
 }

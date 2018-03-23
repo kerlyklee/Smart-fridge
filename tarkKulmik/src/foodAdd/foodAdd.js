@@ -14,7 +14,9 @@ export class foodAdd {
 			.then(data => {
 				console.log('Server saatis ' + data.foodName);
 			});
-			
+			.catch(error => {
+        console.log("Error!" + error.message)
+      })
 			console.log("Method executed")
 		}
 	}
