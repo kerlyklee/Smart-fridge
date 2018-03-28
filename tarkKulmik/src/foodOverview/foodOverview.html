@@ -4,37 +4,26 @@
 <table class="table table-striped table-sm">
        <thead>
          <tr>
-           <th>#</th>
-           <th>Header</th>
-           <th>Header</th>
-           <th>Header</th>
-           <th>Header</th>
+           <th>Toiduaine</th>
+           <th>Kategooria</th>
+           <th>Kogus</th>
+           <th>Aegumiskuupäev</th>
            <th></th>
          </tr>
        </thead>
        <tbody>
-         <tr>
-           <td>1,001</td>
-           <td>Lorem</td>
-           <td>ipsum</td>
-           <td>dolor</td>
-           <td>sit</td>
+
+         <tr repeat.for="foods of foodList">
+           <td>${foods.foodName}</td>
+           <td>${foods.foodType}</td>
+           <td>${foods.foodNum}</td>
+           <td>${foods.foodDate}</td>
            <td>
              <button style="margin-right:3px" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
              <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
            </td>
          </tr>
-         <tr>
-           <td>1,001</td>
-           <td>Lorem</td>
-           <td>ipsum</td>
-           <td>dolor</td>
-           <td>sit</td>
-           <td>
-             <button style="margin-right:3px" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-             <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
-           </td>
-         </tr>
+
        </tbody>
      </table>
      </div>
