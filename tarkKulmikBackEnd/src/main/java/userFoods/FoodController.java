@@ -1,4 +1,4 @@
-package userFoods;
+package app.userFoods;
 
 import java.util.List;
 

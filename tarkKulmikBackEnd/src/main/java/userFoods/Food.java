@@ -1,4 +1,4 @@
-package userFoods;
+package app.userFoods;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
