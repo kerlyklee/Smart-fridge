@@ -12,12 +12,12 @@
            <div>
              <label for="foodNum">Kogus:</label>
              <br>
-             <input type="text" value.bind="foodData.foodNum">
+             <input type="number" value.bind="foodData.foodNum">
            </div>
            <br>
            <div>
              <p>Toiduaine kategooria: </p>
-             <select for="foodType">
+             <select for="foodType" value.bind="foodData.foodType">
                 <option value="piim">Piimatooted</option>
                 <option value="liha">Lihatooted</option>
                 <option value="köögiviljad">Köögiviljad</option>

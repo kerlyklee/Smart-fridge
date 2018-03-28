@@ -13,6 +13,11 @@ public class FoodController {
 
 	private FoodService foodService;
 	
+	public FoodController(FoodService foodService) {
+		this.foodService = foodService;
+	}
+	
+	
 	@RequestMapping(value="/foods/add", method=RequestMethod.POST,
 			consumes = "application/json")
 	public Food addFood(@RequestBody Food food) {
@@ -24,4 +29,8 @@ public class FoodController {
 		return foodService.getAllFoods();
 	}
 	
+	@RequestMapping(value = "/foods/{id}", method=RequestMethod.GET)
+	public Food getFood(@PathVariable("id") long foodId) {
+		return foodService.getFoodById(foodId);
+}
 }

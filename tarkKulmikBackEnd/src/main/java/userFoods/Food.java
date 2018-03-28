@@ -1,5 +1,6 @@
 package app.userFoods;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
