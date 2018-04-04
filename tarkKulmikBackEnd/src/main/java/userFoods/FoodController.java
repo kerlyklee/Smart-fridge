@@ -33,4 +33,9 @@ public class FoodController {
 	public Food getFood(@PathVariable("id") long foodId) {
 		return foodService.getFoodById(foodId);
 }
+	
+	@RequestMapping(value = "/foods/delete/{id}", method = RequestMethod.DELETE)
+	  public void deleteFood(@PathVariable("id") long Id){
+	     foodService.deleteFood(foodService.getFoodById(Id));
+	}
 }

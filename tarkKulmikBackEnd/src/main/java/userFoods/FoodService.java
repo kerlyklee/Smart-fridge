@@ -22,4 +22,6 @@ public class FoodService {
 	Food getFoodById(long foodId) {
 		return foodRepository.findOne(foodId);
 	}
+	
+	 void deleteFood(Food food) {foodRepository.delete(food.getId());}
 }

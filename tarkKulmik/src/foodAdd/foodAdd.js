@@ -16,5 +16,4 @@ export class foodAdd {
 			});
 
 			console.log("Method executed")
-		}
-	}
+		}}
