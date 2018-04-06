@@ -6,7 +6,7 @@ import {
 
 export class foodAlerts {
 
-  foodlist = []
+  foodlistToBeExpired = []
   foodlistExpired = []
 
   activate() {
@@ -14,7 +14,7 @@ export class foodAlerts {
     let client = new HttpClient();
     client.fetch("http://localhost:8080" + '/foods/tobeexpired')
       .then(response => response.json())
-      .then(foods => this.foodList = foods);
+      .then(foodsToBeExpired => this.foodListToBeExpired = foodsToBeExpired);
 
       client.fetch("http://localhost:8080" + '/foods/expired')
         .then(response => response.json())

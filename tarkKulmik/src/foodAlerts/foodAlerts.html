@@ -1,52 +1,42 @@
 <template>
 
-  <div class="table-responsive">
-<table class="table table-striped table-sm">
-       <thead>
-         <tr>
-           <th>Toiduaine</th>
-           <th>Kategooria</th>
-           <th>Kogus</th>
-           <th>Aegumiskuupäev</th>
-           <th></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr repeat.for="foods of foodList">
-           <td>${foods.foodName}</td>
-           <td>${foods.foodType}</td>
-           <td>${foods.foodNum}</td>
-           <td>${foods.foodDate}</td>
-           <td>
-             <button type="button" click.trigger="deleteFood(foods.id)" class="btn btn-sm btn-outline-secondary">Delete</button>
-           </td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-     <div class="table-responsive">
-   <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>Toiduaine</th>
-              <th>Kategooria</th>
-              <th>Kogus</th>
-              <th>Aegumiskuupäev</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr repeat.for="foodsExpired of foodListExpired">
-              <td>${foodsExpired.foodName}</td>
-              <td>${foodsExpired.foodType}</td>
-              <td>${foodsExpired.foodNum}</td>
-              <td>${foodsExpired.foodDate}</td>
-              <td>
-                <button type="button" click.trigger="deleteFood(foodsExpired.id)" class="btn btn-sm btn-outline-secondary">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
+                <h3 style="margin-top:-30px">Märguanded</h3>
+                <br>
+
+            <ul repeat.for="foodsExpired of foodListExpired" class="list-group mb-3">
+              <li id="expired" class="list-group-item d-flex justify-content-between">
+                <div class="d-flex">
+                <div class="text-danger" style="padding: 10px">❌</div>
+                <div class="text-danger">
+                  <h6 class="my-0" style="text-align: left">${foodsExpired.foodName}</h6>
+                  <small style="text-align:left;max-width:80px;width:80px;display: inline-block">${foodsExpired.foodType}</small>
+                </div>
+                <div class="text-danger">
+                  <h6 class="my-0" style="padding:10px">Aegunud: ${foodsExpired.foodDate}</h6>
+                </div>
+                </div>
+                 <div class="d-flex">
+                  <button type="button" click.trigger="deleteFood(foodsExpired.id)" style="height:34px" class="btn btn-sm btn-outline-secondary">Delete</button>
+                </div>
+              </li>
+            </ul>
+
+            <ul repeat.for="foodsToBeExpired of foodListToBeExpired" class="list-group mb-3">
+              <li id="tobeexpired" class="list-group-item d-flex justify-content-between">
+                <div class="d-flex">
+                <div class="text-danger" style="padding: 10px">⚠️</div>
+                <div class="text-danger">
+                  <h6 class="my-0" style="text-align: left">${foodsToBeExpired.foodName}</h6>
+                  <small style="text-align:left;max-width:80px;width:80px;display: inline-block">${foodsToBeExpired.foodType}</small>
+                </div>
+                <div class="text-danger">
+                  <h6 class="my-0" style="padding:10px">Aegub: ${foodsToBeExpired.foodDate}</h6>
+                </div>
+                </div>
+                 <div class="d-flex">
+                  <button type="button" click.trigger="deleteFood(foodsToBeExpired.id)" style="height:34px" class="btn btn-sm btn-outline-secondary">Delete</button>
+                </div>
+              </li>
+            </ul>
 
  </template>
