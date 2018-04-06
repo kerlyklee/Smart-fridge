@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FoodController {
 
-	private FoodService foodService;
+	private final FoodService foodService;
 	
 	public FoodController(FoodService foodService) {
 		this.foodService = foodService;
 	}
-	
 	
 	@RequestMapping(value="/foods/add", method=RequestMethod.POST,
 			consumes = "application/json")
@@ -32,10 +31,20 @@ public class FoodController {
 	@RequestMapping(value = "/foods/{id}", method=RequestMethod.GET)
 	public Food getFood(@PathVariable("id") long foodId) {
 		return foodService.getFoodById(foodId);
-}
+	}
 	
 	@RequestMapping(value = "/foods/delete/{id}", method = RequestMethod.DELETE)
 	  public void deleteFood(@PathVariable("id") long Id){
 	     foodService.deleteFood(foodService.getFoodById(Id));
+	}
+	
+	@RequestMapping(value = "/foods/expired", method = RequestMethod.GET)
+	  public List<Food> getAllFoodsExpired() {
+	    return foodService.getAllFoodsExpired();
+	}
+	
+	@RequestMapping(value = "/foods/tobeexpired", method = RequestMethod.GET)
+	  public List<Food> getAllFoodsToBeExpired() {
+	    return foodService.getAllFoodsToBeExpired();
 	}
 }

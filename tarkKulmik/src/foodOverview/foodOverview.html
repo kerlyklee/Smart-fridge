@@ -12,18 +12,15 @@
          </tr>
        </thead>
        <tbody>
-
          <tr repeat.for="foods of foodList">
            <td>${foods.foodName}</td>
            <td>${foods.foodType}</td>
            <td>${foods.foodNum}</td>
            <td>${foods.foodDate}</td>
            <td>
-             <button style="margin-right:3px" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
              <button type="button" click.trigger="deleteFood(foods.id)" class="btn btn-sm btn-outline-secondary">Delete</button>
            </td>
          </tr>
-
        </tbody>
      </table>
      </div>

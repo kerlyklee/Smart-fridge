@@ -1,7 +1,7 @@
 import {HttpClient, json} from 'aurelia-fetch-client'
 
 export class foodAdd {
-
+  
   	addFood() {
 		let client = new HttpClient();
  		let foodData = {}
@@ -14,6 +14,4 @@ export class foodAdd {
 			.then(data => {
 				console.log('Server saatis ' + data.foodName + data.foodNum + data.foodType + data.foodDate);
 			});
-
-			console.log("Method executed")
 		}}

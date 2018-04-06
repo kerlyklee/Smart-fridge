@@ -13,5 +13,10 @@ public interface FoodRepository extends CrudRepository<Food, Long> {
 	
 	@Query(nativeQuery=true, value = "DELETE FROM FOOD WHERE ID = ?1")
 	Food deleteFood(long Id);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM FOOD WHERE FOOD_DATE < CURDATE() ORDER BY FOOD_DATE ASC")
+	List<Food> findExpired();
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM FOOD WHERE FOOD_DATE BETWEEN CURDATE() and CURDATE()+4 ORDER BY FOOD_DATE ASC")
+	List<Food> findToBeExpired();
 }
-

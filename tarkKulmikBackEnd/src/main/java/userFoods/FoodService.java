@@ -5,16 +5,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FoodService {
-	
-	private FoodRepository foodRepository;
+	private final FoodRepository foodRepository;
 	
 	public FoodService(FoodRepository foodRepository) {
 		this.foodRepository = foodRepository;
 	}
+	
 	Food addFood(Food food){
 		return foodRepository.save(food);
 	}
-
+	
 	List<Food> getAllFoods(){
 		return foodRepository.findAll();
 	}
@@ -23,5 +23,15 @@ public class FoodService {
 		return foodRepository.findOne(foodId);
 	}
 	
-	 void deleteFood(Food food) {foodRepository.delete(food.getId());}
+	List<Food> getAllFoodsExpired() {
+	    return foodRepository.findExpired();
+	}
+	
+	List<Food> getAllFoodsToBeExpired() {
+		return foodRepository.findToBeExpired();
+	}
+	
+	void deleteFood(Food food) {
+		foodRepository.delete(food.getId());
+	}
 }

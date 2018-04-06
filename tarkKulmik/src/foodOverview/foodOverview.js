@@ -1,32 +1,35 @@
-import {HttpClient, json} from 'aurelia-fetch-client';
-import env from '../environment'
+import {
+  HttpClient,
+  json
+} from 'aurelia-fetch-client';
+
 
 export class foodOverview {
 
-  foodlist=[]
+  foodlist = []
 
   activate() {
 
-     let client = new HttpClient();
-     client.fetch(env.backendURL +'/foods/')
-       .then(response => response.json())
-       .then(foods => this.foodList = foods);
-   }
+    let client = new HttpClient();
+    client.fetch("http://localhost:8080" + '/foods/')
+      .then(response => response.json())
+      .then(foods => this.foodList = foods);
+  }
 
-   
 
-   deleteFood(foodId) {
 
-     let client = new HttpClient();
-     this.foodId = foodId;
-     return fetch(env.backendURL+'/foods/delete/'+this.foodId, {
-     method: 'delete'
-     }).then(response =>
-     response.text().then(json => {
-       return json;
-     })
-        );
+  deleteFood(foodId) {
+    location.reload();
+    let client = new HttpClient();
+    this.foodId = foodId;
+    return fetch("http://localhost:8080" + '/foods/delete/' + this.foodId, {
+      method: 'delete'
+    }).then(response =>
+      response.text().then(json => {
+        return json;
+      })
+    );
 
-        }
+  }
 
-    }
+}

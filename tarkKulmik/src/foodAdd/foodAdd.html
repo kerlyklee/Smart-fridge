@@ -6,7 +6,7 @@
            <div>
              <label for="foodName">Toidu nimetus:</label>
              <br>
-             <input type="text" value.bind="foodData.foodName">
+             <input type="text" value.bind="foodData.foodName" required>
            </div>
            <br>
            <div>
@@ -17,7 +17,8 @@
            <br>
            <div>
              <p>Toiduaine kategooria: </p>
-             <select for="foodType" value.bind="foodData.foodType">
+             <select for="foodType" value.bind="foodData.foodType" required>
+							  <option style="display:none" value="" disabled selected>Vali kategooria</option>
                 <option value="piim">Piimatooted</option>
                 <option value="liha">Lihatooted</option>
                 <option value="köögiviljad">Köögiviljad</option>
@@ -33,7 +34,7 @@
            <div>
              <label for="foodDate">Aegumiskuupäev:</label>
              <br>
-             <input type="date" value.bind="foodData.foodDate">
+             <input type="date" value.bind="foodData.foodDate" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
            </div>
            <br>
             <input type="submit" value="Lisa Toit">
