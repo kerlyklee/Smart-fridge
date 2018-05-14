@@ -23,4 +23,5 @@ public class Food {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date foodDate = new Date();
 	private String foodType;
+	private String foodUnit;
 }

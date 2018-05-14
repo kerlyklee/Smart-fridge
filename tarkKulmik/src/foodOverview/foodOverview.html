@@ -15,7 +15,7 @@
          <tr repeat.for="foods of foodList">
            <td>${foods.foodName}</td>
            <td>${foods.foodType}</td>
-           <td>${foods.foodNum}</td>
+           <td>${foods.foodNum} ${foods.foodUnit}</td>
            <td>${foods.foodDate}</td>
            <td>
              <button type="button" click.trigger="deleteFood(foods.id)" class="btn btn-sm btn-outline-secondary">Delete</button>
