@@ -6,8 +6,8 @@ export class App {
     config.map([{
         route: ['', 'home'],
         name: 'home',
-        moduleId: 'home/index'
-        
+        moduleId: 'foodAlerts/foodAlerts'
+
       },
       {
         route: 'foodAlerts',
